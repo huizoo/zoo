@@ -84,20 +84,81 @@
 
 
 
-class Person :
-    def __init__(self, name, age):
-        self.name = name
-        self.__age = age
+# class Person :
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.__age = age
     
-    @property                       # getter 함수 위에는 @property라고 적어주고
-    def age(self) :                 # 비공개 속성의 값을 읽기 위한 용도로 사용한다.
-        return self.__age
+#     @property                       # getter 함수 위에는 @property라고 적어주고
+#     def age(self) :                 # 비공개 속성의 값을 읽기 위한 용도로 사용한다.
+#         return self.__age
     
-    @age.setter                     # @메서드명.setter라고 적어준다
-    def age(self, value) :          # 비공개 속성의 값을 변경하기 위한 용도로 사용한다.
-        self.__age = value
+#     @age.setter                     # @메서드명.setter라고 적어준다
+#     def age(self, value) :          # 비공개 속성의 값을 변경하기 위한 용도로 사용한다.
+#         self.__age = value
 
-k = Person('김규리', 25)
-print(k.age)    # 25    getter 
-k.age = 20
-print(k.age)    # 20    setter
+# k = Person('김규리', 25)
+# print(k.age)    # 25    getter 
+# k.age = 20
+# print(k.age)    # 20    setter
+
+
+# if True : 
+#     print('참')
+# else : 
+#     print('거짓')
+
+# # SyntaxError : invalid syntax
+
+# print('hi)
+      
+# # SyntaxError : EOL while scanning string literal
+
+# a = 10* (1/0)
+
+# # ZeroDivisionError : division by zero
+
+# print(abc)
+
+# # NameError: name 'abc' is not defined
+
+# a = 1 + '1'
+
+# # TypeError
+
+# a = round('3.5')
+
+# # TypeError
+
+# import random
+# random.sample([1, 2, 3])
+
+# # TypeError: sample() missing 1 required positional argument: 'k'
+
+# a = int('3.5')
+
+# # ValueError
+
+# numbers = [1, 2]
+# numbers.index(3)
+
+# #ValueError
+
+# empty_list = []
+# empty_list[-1]
+
+# # IndexError : list index out of range
+
+# songs = {'new jeans' : 'supershy'}
+# songs['ive']
+
+# # KeyError: 'ive'
+
+# import reque
+
+# # moduleNotFoundError : Nomodule named 'reque'
+
+for i in range(3) : 
+print(i)
+
+# IndentationError
