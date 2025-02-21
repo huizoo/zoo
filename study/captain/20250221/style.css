@@ -1,0 +1,39 @@
+/* 전체선택자 */
+*{
+  color: red;
+}
+
+h2{
+  color: orange;
+}
+
+h3,h4{
+  font-size: 10px;
+}
+
+.green{
+  color: green;
+}
+
+#purple{
+  color: purple;
+}
+
+.box>p{
+  font-size: 30px;
+}
+
+.box p{
+  color: violet;
+}
+
+.green{
+  color: green !important
+}
+
+/* 우선순위
+!important
+Inline으로 css 적용
+id class 태그명(요소 선택자)
+소스코드작성순서(마지막된걸로)
+*/

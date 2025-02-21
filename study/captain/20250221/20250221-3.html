@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div>article1</div>
+  <div>article2 디스플레이 속성: block</div>
+  특별한 기능이 없는 태그!!
+  웹페이지 전체적인 레이아웃 잡을 때(틀 만들 때)
+  non sementic tag
+  <span> 임시로 어떤 값을 넣어 줄 때 많이 씀</span>
+  <span> i don't know.. 디스플레이 속성: inline</span>
+  <div id="header"></div> -> 이런 넌세멘틱 말고 세멘틱 요소를 많이 써라
+
+  <header> 세멘틱 태그!</header>
+  <section></section>
+  <footer></footer>
+  
+  <!-- div>(div#header>div)+(div#container>div)+(div#footer>div) -->
+
+  <div id="header">
+    <div></div>
+  </div>
+  <div id="container">
+    <div></div>
+  </div>
+  <div id="footer">
+    <div></div>
+  </div>
+
+  <!-- (header>nav)+(section>(article*2))+footer>article -->
+
+  <header>
+    <nav></nav>
+  </header>
+  <section>
+    <article>article</article>
+    <article>aside</article>
+  </section>
+  <footer>
+    <article></article>
+  </footer>
+
+
+</body>
+</html>
