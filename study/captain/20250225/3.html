@@ -1,0 +1,67 @@
+<!--
+
+position - html 문서 상에서 요소가 배치되고 있는 방식을 결정하는 것을 position이라고 한다
+
+static 기준위치
+relative 상대위치
+absolute 절대위치
+fixed 고정위치
+stiky 스크롤에 따라서 static에서 fixed로 성질이 바뀜
+
+position: relative -> 원래 있어야 하는 위치로 부터 off-set
+
+부모가 static만 아니면 자식 absolute는 부모를 기준으로 절대위치가 됨.
+부모가 static이면 그 위 부모로 올라감(body까지)
+
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      background-color: yellow;
+      width: 500px; height: 300px;
+      margin: 0px auto;
+      position: relative;
+    }
+    .box{
+      width: 100px;
+      height: 100px;
+      position: absolute;
+    }
+
+    .a{
+      background-color: red;
+      top: 50px; left: 50px;
+      z-index: 3;
+    }
+
+    .b{
+      background-color: green;
+      top: 100px; left: 100px;
+      z-index: 2;
+    }
+
+    .c{
+      background-color: blue;
+      top: 150px; left: 150px;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <section class="container">
+    <div class="box a">box a</div>
+    <div class="box b">box b</div>
+    <div class="box c">box c</div>
+  </section>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam perferendis voluptatum id dolorum possimus modi eveniet neque sed! Commodi sapiente nobis, libero voluptates aliquid expedita blanditiis voluptatem ipsa eveniet vitae.</p>
+</body>
+</html>
