@@ -15,4 +15,4 @@ def BF(p, t):
     if j == M : return i-M
     else : return -1
 
-BF(p, t)
+print(BF(p, t))
