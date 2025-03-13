@@ -90,22 +90,22 @@ import heapq
 # # arr = [[1, 5], [1, 9], [4, 2]]
 # # 우선순위 조건 1. 첫번째 원소 내림차순
 # # 우선순위 조건 2. 두번째 원소 오름차순
-class Node:
-    def __init__(self, a, b):
-        self.a = a
-        self.b = b
-    def __lt__(self, other): # less than < (작다) : self -> 앞에 놓여야 할 값 / # other : 뒤에 있는 값
-        # True 를 반환하면 self 가 other 보다 앞으로, False 는 반대로
-        # self 는 자기자신 객체, other 는 다른 객체 전부
-        if self.a > other.a: return True
-        if self.a < other.a: return False
-        return self.b < other.b
-
-heap = []
-heapq.heappush(heap, Node(1, 5))
-heapq.heappush(heap, Node(1, 9))
-heapq.heappush(heap, Node(4, 2))
+# class Node:
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#     def __lt__(self, other): # less than < (작다) : self -> 앞에 놓여야 할 값 / # other : 뒤에 있는 값
+#         # True 를 반환하면 self 가 other 보다 앞으로, False 는 반대로
+#         # self 는 자기자신 객체, other 는 다른 객체 전부
+#         if self.a > other.a: return True
+#         if self.a < other.a: return False
+#         return self.b < other.b
 #
+# heap = []
+# heapq.heappush(heap, Node(1, 5))
+# heapq.heappush(heap, Node(1, 9))
+# heapq.heappush(heap, Node(4, 2))
+# #
 # while heap:
 #     temp = heapq.heappop(heap)
 #     print(temp.a, temp.b)
@@ -157,7 +157,10 @@ def dijkstra():
     # 시작->경유
     # 시작->경유->도착 비교 후 작은 값으로 갱신
         for j in range(5): # result 배열에 갱신 할 것임
+            # 현재 기준 j로 갈 수 있는 최소값
             baro=result[j]
+            # via 를 경유해서 j 로 가는 최소값
+            # via 로 가는 최소값 + via 에서 j로 가는 값
             kyoung=result[via]+arr[via][j]
             if baro>kyoung:
                 result[j]=kyoung
