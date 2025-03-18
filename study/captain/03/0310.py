@@ -57,7 +57,23 @@
 # else: print('다른그룹')
 
 
+
+
+# 5 5
+# A B
+# B C
+# D E
+# A D
+# C D
 #
+# 6 4
+# A B
+# B D
+# F D
+# A E
+
+
+
 # arr=[0]*200
 # n,m=map(int,input().split())
 # edge=[]
@@ -87,7 +103,22 @@
 # if answer:
 #     print("cycle 발생")
 # else: print("cycle 없음")
-#
+
+
+
+
+
+
+# 5
+# 8
+# A B 9
+# A C 3
+# A E 7
+# B C 14
+# B D 11
+# C D 1
+# C E 5
+# A D 20
 
 
 
@@ -123,16 +154,7 @@
 
 
 
-# 5
-# 8
-# A B 9
-# A C 3
-# A E 7
-# B C 14
-# B D 11
-# C D 1
-# C E 5
-# A D 20
+
 
 
 def find(parent, x):  # 부모 노드를 찾는 함수 (경로 압축)
@@ -154,8 +176,8 @@ def union(parent, rank, a, b):  # 두 집합을 합치는 함수 (유니온)
 
 
 def kruskal(n, edges):
-    parent = [i for i in range(n + 1)]  # 부모 테이블
-    rank = [0] * (n + 1)  # 랭크 정보
+    parent = {chr(i): chr(i) for i in range(ord('A'), ord('A') + n)}  # 부모 테이블
+    rank = {chr(i): 0 for i in range(ord('A'), ord('A') + n)}  # 랭크 정보
     edges.sort(key=lambda x: x[2])  # 가중치 기준 정렬
 
     mst_cost = 0
@@ -170,17 +192,14 @@ def kruskal(n, edges):
     return mst_cost, mst_edges
 
 
-# 예제 입력: (노드 개수, 간선 리스트)
-n = 4  # 노드 개수
-edges = [
-    (1, 2, 1),
-    (2, 3, 3),
-    (3, 4, 2),
-    (4, 1, 4),
-    (1, 3, 5)
-]
+n = int(input())  # 노드 개수
+m = int(input())  # 간선 개수
+edges = []
+for _ in range(m):
+    u, v, w = input().split()
+    edges.append((u, v, int(w)))
 
 mst_cost, mst_edges = kruskal(n, edges)
-print("최소 신장 트리 비용:", mst_cost)
-print("선택된 간선:", mst_edges)
 
+
+print(mst_cost)
