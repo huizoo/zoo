@@ -19,7 +19,7 @@ django-admin startproject 이름 경로(보통 . 찍음) (경로에 manage.py가
 python manage.py startapp 이름
 
 7. settings.py 앱 등록
-INSTALLED+APPS 의 맨 위에
+INSTALLED_APPS 의 맨 위에
 
 8. urls.py 들어가서 경로 설정
 from 앱이름 import views
