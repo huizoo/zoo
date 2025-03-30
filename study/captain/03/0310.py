@@ -122,10 +122,10 @@
 
 
 
-# k=int(input()) # 정점의 개수
-# n=int(input()) # 간선 정보의 개수
-# lst=[list(input().split()) for _ in range(n)]
-# lst.sort(key=lambda x:int(x[2]))
+# k = int(input())    # 정점의 개수
+# n = int(input())    # 간선 정보의 개수
+# lst = [list(input().split()) for _ in range(n)]
+# lst.sort(key=lambda x: int(x[2]))
 # arr=[0]*200
 #
 # def findboss(m):
@@ -151,55 +151,3 @@
 #         print(total_cost)
 #         break
 #     union(lst[i][0],lst[i][1],i)
-
-
-
-
-
-
-def find(parent, x):  # 부모 노드를 찾는 함수 (경로 압축)
-    if parent[x] != x:
-        parent[x] = find(parent, parent[x])
-    return parent[x]
-
-
-def union(parent, rank, a, b):  # 두 집합을 합치는 함수 (유니온)
-    rootA = find(parent, a)
-    rootB = find(parent, b)
-    if rootA != rootB:
-        if rank[rootA] > rank[rootB]:  # 랭크가 높은 쪽이 부모가 됨
-            parent[rootB] = rootA
-        else:
-            parent[rootA] = rootB
-            if rank[rootA] == rank[rootB]:
-                rank[rootB] += 1
-
-
-def kruskal(n, edges):
-    parent = {chr(i): chr(i) for i in range(ord('A'), ord('A') + n)}  # 부모 테이블
-    rank = {chr(i): 0 for i in range(ord('A'), ord('A') + n)}  # 랭크 정보
-    edges.sort(key=lambda x: x[2])  # 가중치 기준 정렬
-
-    mst_cost = 0
-    mst_edges = []
-
-    for u, v, weight in edges:
-        if find(parent, u) != find(parent, v):  # 사이클이 없으면 선택
-            union(parent, rank, u, v)
-            mst_edges.append((u, v, weight))
-            mst_cost += weight
-
-    return mst_cost, mst_edges
-
-
-n = int(input())  # 노드 개수
-m = int(input())  # 간선 개수
-edges = []
-for _ in range(m):
-    u, v, w = input().split()
-    edges.append((u, v, int(w)))
-
-mst_cost, mst_edges = kruskal(n, edges)
-
-
-print(mst_cost)
