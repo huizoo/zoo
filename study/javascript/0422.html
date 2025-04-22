@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // JS CODE
+
+    // const hi="안녕"
+    // console.log(hi)
+
+    // TypeError
+    // hi = '하이'
+    // console.log(hi)
+
+    // for (let y=1; y<5; y++){
+    //   console.log(y);
+    // }
+
+    // var a = '하이'
+    // var a = '안녕'
+    // console.log(a)
+
+    // test = '안녕'
+    // console.log(test)
+
+    // const n1 = 0
+    // const n2 = 123
+    // const s1 = 'a'
+    // const s2 = 'asdf'
+    // const b1 = true
+    // const b2 = false
+    // console.log(typeof n1)
+    // console.log(typeof n2)
+    // console.log(typeof s1)
+    // console.log(typeof s2)
+    // console.log(typeof b1)
+    // console.log(typeof b2)
+
+    // let str="aasdf"
+    // const t=str.includes('n');
+    // console.log(t)
+
+    // const t2=str.split('');
+    // console.log(t2)
+
+    // const t3=str.replace('s','z')
+    // console.log(t3)
+
+    // const t4=str.replaceAll('a','kk')
+    // console.log(t4)
+
+
+    // const myName = 'kevin'
+    // const age = 40
+    // console.log(myName+"는 "+age+"입니다.")
+    // console.log(`${myName}는 ${age}입니다.`)
+
+    // const a = 1
+    // const b = 2
+    // function addNum(n, m){
+    //   return n+m
+    // }
+    // console.log(`${a}+${b}=${addNum(a, b)}`)
+
+    // console.log(`
+    // 이름:kevin
+    // 나이:40
+    // `)
+
+    // ===
+    // !==
+    // &&
+    // ||
+
+    // false 인식하는 것들
+    // 0, false, "", undefined, NULL
+
+    // [] 빈배열, {} 빈객체 -> true
+
+    // // 객체 순회할 때 for in
+    // const obj={a:1, b:2, c:3}
+    // for(const key in obj){
+    //   console.log(key, obj[key])
+    // }
+
+    // // for of 로 순회 
+    // const arr = [1,2,3,4]
+    // for (const value of arr){
+    //   console.log(value)
+    // }
+
+    // // 이렇게도 순회 가능
+    // for (let y=0; y<4; y++){
+    //   console.log(arr[y])
+    // }
+
+    // const num = [1,2,3,4]
+    // console.log(num[0])
+    // console.log(num[0])
+    // console.log(num.length)
+
+    // const str='asdf'
+    // console.log(str.length)
+    
+
+    // const name=[1,2,3,4]
+    // console.log(name)
+
+    // name[1] = 6 // 재할당 아님
+    // console.log(name)
+
+    // // name=[4,6,2,23] // 재할당
+
+    // name.push(5)
+    // console.log(name)
+
+    // const myinfo = {
+    //   name: 'kevin',
+    //   age: 40,
+    //   isMarried: true,
+    //   family:['아빠','엄마','시현이']
+    // }
+
+    // console.log(myinfo.family[0])
+    // console.log(myinfo.skills)
+
+    // myinfo.name='bob'
+    // console.log(myinfo.name)
+
+
+    // const friends = ['kevin', 'bob', 'kate']
+    // const age = [36,5,72]
+    // let index = 1
+    // const school = {
+    //   friends: friends,
+    //   age: age,
+    //   [friends[index]]: age[index]
+    // }
+    // console.log(school)
+
+    // const school1 = {
+    //   friends: friends,
+    //   age: age,
+    // }
+    // // 속성명 축약
+    // const school2 = {
+    //   friends,
+    //   age
+    // }
+
+    // console.log(school1)
+    // console.log(school2)
+
+    // 객체 문법 3번. destructing
+    // const user = {
+    //   name1: 'minho',
+    //   name2: 'bbq',
+    //   gender: 'male'
+    // }
+    // console.log(user.name1, user.gender)
+
+    // const name1 = user.name1
+    // const gender = user.gender
+    // console.log(name1, gender)
+
+    // 변수명과 객체의 속성 키값이 같을 때 이렇게 표현 가능
+    // const{name1} = user
+    // const{gender} = user
+    // console.log(name1, gender)
+    
+    // 이렇게도 가능
+    // const{name1, gender} = user
+    // console.log(name1, gender)
+
+
+    // const kfc = ['kevin', 'bob', 'kate']
+    // console.log(...kfc)
+
+    // const ban = {
+    //   name3: 'kfc',
+    //   name4: 'bbq',
+    // }
+    // const user2 = {
+    //   name1:'minho',
+    //   name2:'mc',
+    //   ...ban
+    // }
+    // console.log(user2)
+
+    // // 객체문법 5: 메서드 축약
+    // const person = {
+    //   name: 'kevin',
+    //   age: 40,
+    //   sayAge: function(){
+    //     console.log(`my age is ${this.age}`)
+    //   }
+    // }
+    // person.sayAge();
+
+
+    // 객체관련문법 : JSON 관련문법
+    // const user5 = {
+    //   name1: 'kevin',
+    //   gender: 'male'
+    // }
+
+    // const obj_to_json = JSON.stringify(user5)
+    // console.log(obj_to_json)
+    // console.log(typeof obj_to_json)
+
+    // const json_to_obj=JSON.parse(obj_to_json)
+    // console.log(json_to_obj)
+    // console.log(typeof(json_to_obj))
+
+
+
+    // 함수 선언식
+    // function kakao(age, name){
+    //   console.log(age, name)
+    // }
+    // kakao(40, 'minho')
+
+
+    // // 함수 표현식
+    // const naver = function(age, name){
+    //   console.log(age, name)
+    // }
+    // naver(40, 'minho')
+
+    const abc = function(Age){
+      console.log(age)
+    }
+
+    const abc2 = age => {console.log(age)}
+
+    const google = function(age, name){
+      return age+10
+    }
+    console.log(google(40, 'minho'))
+
+    const google2 = (age, name) => {return age+10}
+
+    const test1 = _ => console.log('hi')
+    const test2 = () => console.log('hi')
+
+    // 1. 함수 표현식에서 function 사용 안함 그리고 => 적어준다.
+    // 2. 매개변수가 없다면 빈괄호 () 또는 _ 넣어준다.
+    // 3., 매개변수가 1개면 빈괄호 () 또는 괄호생략 가능하다.
+    // 4. 매개변수가 2개 이상이면 () 소괄호 반드시 넣어준다.
+    // 5. 함수안의 식이 1줄이라면 {} 중괄호 생략 가능
+    // 6. 함수안의 식이 1줄이고, 그게 마침 return 이라면 return 생략 가능
+    // 7. return 하는 대상이 obj 하나라면 소괄호를 감싸거나 또는 return 반드시 작성
+
+    const getObject=() => {
+      return {name: 'minho'}
+    }
+
+    const getObject2 = () => ({name:'minho'})
+    
+    const getObject3 = () => {return {name:'minho'}}
+    
+    console.log(getObject3());
+
+    // 즉시 실행 함수
+    (function (num) {console.log(num**3)})(2)
+
+    //기본 폼을 보자
+    // 1. 소괄호
+    // 2. function + (매개변수)
+    // 3. 함수작성
+    // 4. (인자값)
+
+    
+  </script>
+</body>
+</html>
