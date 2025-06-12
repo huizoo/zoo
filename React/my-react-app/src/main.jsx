@@ -171,23 +171,42 @@ import { createRoot } from "react-dom/client";
 //   </div>
 // )
 
-const nums = Array.from({ length: 9 }, (_, i) => i + 1);
-// Array.from() 은 본질적으로 Array.from(arrayLike).map(...) 을 한 번에 하는 축약 형태
-// 하지만 위 코드에서 두번째 인자로 콜백함수를 받지 않게 되면 각 자리에 undefined가 들어감
-// Array.from("hello") 같은 경우는 ['h','e','l','l','o'] 로 분해됨
+// const nums = Array.from({ length: 9 }, (_, i) => i + 1);
+// // Array.from() 은 본질적으로 Array.from(arrayLike).map(...) 을 한 번에 하는 축약 형태
+// // 하지만 위 코드에서 두번째 인자로 콜백함수를 받지 않게 되면 각 자리에 undefined가 들어감
+// // Array.from("hello") 같은 경우는 ['h','e','l','l','o'] 로 분해됨
 
+// const element = (
+//   <div style={{ display: "flex" }}>
+//     {nums.map(
+//       (n) =>
+//         n !== 1 &&
+//         n !== 5 && (
+//           <div
+//             key={n}
+//             style={{ padding: 10, color: n % 2 === 1 ? "blue" : "black" }}
+//           >
+//             {/* <div style={{ padding: 10, color: n % 2 ? 'blue' : 'black' }}> */}
+//             {nums.map((m) => (
+//               <div key={`${n}-${m}`}>
+//                 {n} x {m} = {n * m}
+//               </div>
+//             ))}
+//           </div>
+//         )
+//     )}
+//   </div>
+// );
+
+const arr = Array.from({ length: 9 }, (_, i) => i + 1);
 const element = (
   <div style={{ display: "flex" }}>
-    {nums.map(
+    {arr.map(
       (n) =>
         n !== 1 &&
         n !== 5 && (
-          <div
-            key={n}
-            style={{ padding: 10, color: n % 2 === 1 ? "blue" : "black" }}
-          >
-            {/* <div style={{ padding: 10, color: n % 2 ? 'blue' : 'black' }}> */}
-            {nums.map((m) => (
+          <div key={n} style={{ padding: 10, color: n % 2 ? "blue" : "black" }}>
+            {arr.map((m) => (
               <div key={`${n}-${m}`}>
                 {n} x {m} = {n * m}
               </div>
