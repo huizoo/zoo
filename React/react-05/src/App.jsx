@@ -1,11 +1,30 @@
-import Counter from "./components/Counter";
+// import Counter from "./components/Counter";
+
+// const App = () => {
+//   return (
+//     <div>
+//       <Counter />
+//     </div>
+//   );
+// };
+
+import { useState } from "react";
+import ClassComponent from "./components/ClassComponent";
+import FunctionalComponent from "./components/FunctionalComponent";
 
 const App = () => {
+  const [toggle, setToggle] = useState(true);
+
   return (
-    <div>
-      <Counter />
-    </div>
+    <>
+      {toggle && <ClassComponent />}
+      {toggle || <FunctionalComponent />}
+
+      <hr />
+
+      <button onClick={() => setToggle((t) => !t)}>toggle</button>
+    </>
   );
 };
 
-export default App
+export default App;

@@ -64,7 +64,7 @@ const Counter = () => {
 
   // const increaseValue = useCallback(() => {
   //   setValue(value + 1);
-  // }, [value]);
+  // }, [value]); 
 
   // const increaseValue = () => {
   //   setValue(value + 1);
