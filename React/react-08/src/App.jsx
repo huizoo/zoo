@@ -33,8 +33,8 @@ const App = () => {
   );
 
   const addMemo = useCallback(() => {
-    const now = Date.now();
     setMemos((prev) => {
+      const now = Date.now();
       const newMemos = [
         ...prev,
         {
@@ -50,7 +50,7 @@ const App = () => {
     });
   }, []);
 
-  const deleteMemo = useCallBack(
+  const deleteMemo = useCallback(
     (index) => {
       setMemos((prev) => {
         const newMemos = [...prev];
