@@ -1,0 +1,35 @@
+.MemoItem {
+  width: 100%;
+  padding: 5px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.MemoItem.selected {
+  background-color: rgba(100, 100, 100, 0.3);
+}
+
+.MemoItem__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.MemoItem__delete-button {
+  background: none;
+  color: red;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  flex-shrink: 0;
+  font-size: 12px;
+  padding: 0;
+}
+
+.MemoItem:hover .MemoItem__delete-button {
+  opacity: 1;
+}
