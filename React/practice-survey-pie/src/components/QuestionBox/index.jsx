@@ -14,7 +14,12 @@ const QuestionBox = ({
     <div>
       <Title>{question.title}</Title>
       <Desc>{question.desc}</Desc>
-      <Body type={question.type} answer={answer} setAnswer={setAnswer} />
+      <Body
+        type={question.type}
+        options={question.options}
+        answer={answer}
+        setAnswer={setAnswer}
+      />
       <ActionButtons questionsLength={questionsLength} step={step} />
     </div>
   )
